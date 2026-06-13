@@ -34,7 +34,7 @@ export default function Hero() {
         </p>
 
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-          Systems Engineering student (9th semester) with 2+ years of experience in
+          Systems Engineering student (10th semester) with 2+ years of experience in
           customer service and independent tech operations. I lead academic projects
           in <span className="text-ink">fullstack development</span>,{" "}
           <span className="text-ink">AI-powered computer vision</span> and{" "}
