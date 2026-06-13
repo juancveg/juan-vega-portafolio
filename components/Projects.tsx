@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Github, HardHat, ShoppingCart, Map as MapIcon } from "lucide-react";
+import { Github } from "lucide-react";
 
 type Project = {
   title: string;
@@ -10,7 +10,7 @@ type Project = {
   tags: string[];
   categories: string[];
   github: string;
-  icon: typeof HardHat;
+  image: string;
 };
 
 const CATEGORIES = ["All", "AI & Computer Vision", "Web Development", "Geolocation"];
@@ -24,7 +24,7 @@ const PROJECTS: Project[] = [
     tags: ["React", "Node.js", "Express", "Python", "Flask", "YOLOv11", "MySQL", "Cloudinary"],
     categories: ["AI & Computer Vision", "Web Development"],
     github: "https://github.com/jhanhrndz/buildsafe-frontend",
-    icon: HardHat,
+    image: "/projects/buildsafe.png",
   },
   {
     title: "TiendaYa",
@@ -34,7 +34,7 @@ const PROJECTS: Project[] = [
     tags: ["React", "Node.js", "Express", "MySQL", "REST API"],
     categories: ["Web Development"],
     github: "https://github.com/jhanhrndz/tiendaYa-project",
-    icon: ShoppingCart,
+    image: "/projects/tiendaya.png",
   },
   {
     title: "TransporMap",
@@ -44,7 +44,7 @@ const PROJECTS: Project[] = [
     tags: ["Java", "Oracle", "Geolocation", "Maps"],
     categories: ["Geolocation", "Web Development"],
     github: "https://github.com/jhanhrndz/transpormap",
-    icon: MapIcon,
+    image: "/projects/transpormap.png",
   },
 ];
 
@@ -79,54 +79,49 @@ export default function Projects() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {visible.map((project) => {
-            const Icon = project.icon;
-            return (
-              <div
-                key={project.title}
-                className="flex flex-col overflow-hidden rounded-xl border border-line bg-surface transition-colors hover:border-signal/40"
-              >
-                {/*
-                  Image placeholder — 16:9 cover image.
-                  Replace this div with:
-                  <img src="/projects/your-image.jpg" alt="..." className="h-full w-full object-cover" />
-                  once your generated image is ready (recommended 1200x675px).
-                */}
-                <div className="dot-grid relative flex aspect-video items-center justify-center bg-surface2">
-                  <Icon size={40} className="text-signal/70" />
-                </div>
-
-                <div className="flex flex-1 flex-col p-5">
-                  <h3 className="font-display text-lg font-semibold text-ink">{project.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{project.description}</p>
-
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-line bg-surface2 px-2 py-0.5 font-mono text-xs text-muted"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <p className="mt-3 flex items-center gap-1.5 text-sm text-pulse">
-                    <span className="h-1 w-1 rounded-full bg-pulse" /> {project.highlight}
-                  </p>
-
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 self-start rounded-full border border-line bg-surface2 px-3 py-1.5 text-sm text-ink transition-colors hover:border-signal/50 hover:text-signal"
-                  >
-                    <Github size={15} /> GitHub
-                  </a>
-                </div>
+          {visible.map((project) => (
+            <div
+              key={project.title}
+              className="flex flex-col overflow-hidden rounded-xl border border-line bg-surface transition-colors hover:border-signal/40"
+            >
+              <div className="relative aspect-video overflow-hidden bg-surface2">
+                <img
+                  src={project.image}
+                  alt={`${project.title} preview`}
+                  className="h-full w-full object-cover"
+                />
               </div>
-            );
-          })}
+
+              <div className="flex flex-1 flex-col p-5">
+                <h3 className="font-display text-lg font-semibold text-ink">{project.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{project.description}</p>
+
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-line bg-surface2 px-2 py-0.5 font-mono text-xs text-muted"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <p className="mt-3 flex items-center gap-1.5 text-sm text-pulse">
+                  <span className="h-1 w-1 rounded-full bg-pulse" /> {project.highlight}
+                </p>
+
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 self-start rounded-full border border-line bg-surface2 px-3 py-1.5 text-sm text-ink transition-colors hover:border-signal/50 hover:text-signal"
+                >
+                  <Github size={15} /> GitHub
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
