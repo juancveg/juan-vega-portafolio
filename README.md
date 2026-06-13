@@ -48,4 +48,3 @@ Open [http://localhost:3000](http://localhost:3000).
 - **LinkedIn:** [linkedin.com/in/juan-vega-4b1b1233a](https://www.linkedin.com/in/juan-vega-4b1b1233a)
 - **GitHub:** [github.com/juancveg](https://github.com/juancveg)
 - **WhatsApp:** +57 300 785 4790
-HEREDOC
