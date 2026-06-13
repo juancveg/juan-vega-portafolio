@@ -13,7 +13,7 @@ export default function Hero() {
         {/* Photo slot — drop your portrait at /public/profile.jpg */}
         <div className="relative mb-8 h-36 w-36 overflow-hidden rounded-full border-2 border-signal/40 bg-surface shadow-[0_0_40px_-10px_rgba(34,211,238,0.6)] sm:h-44 sm:w-44">
           <img
-            src="/profile.jpg"
+            src="/profile.png"
             alt="Portrait of Juan Carlos Vega Rojano"
             className="h-full w-full object-cover"
           />
@@ -23,11 +23,14 @@ export default function Hero() {
           Juan Vega
         </h1>
 
-        <p className="mt-4 font-mono text-sm uppercase tracking-[0.2em] text-muted sm:text-base">
-          Systems Engineering Student{" "}
-          <span className="text-line">|</span>{" "}
-          <span className="text-signal">Fullstack</span> &amp;{" "}
-          <span className="text-pulse">AI / Networks</span>
+        <p className="mt-4 font-mono text-sm uppercase tracking-[0.2em] sm:text-base">
+          <span className="text-ink">Systems Engineering Student</span>{" "}
+          <span className="text-muted">|</span>{" "}
+          <span className="text-signal">Networks</span>
+          <span className="text-ink">,</span>{" "}
+          <span className="text-ink">IT Management</span>
+          <span className="text-ink"> &amp; </span>
+          <span className="text-pulse">Database Management</span>
         </p>
 
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
