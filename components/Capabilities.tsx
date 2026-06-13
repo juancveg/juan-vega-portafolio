@@ -28,7 +28,7 @@ import {
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 
-type AnyIcon = ComponentType<{ size?: number; className?: string }>;
+type AnyIcon = ComponentType<any>;
 
 const SOFT_SKILLS: { icon: AnyIcon; title: string; description: string }[] = [
   {
