@@ -190,7 +190,7 @@ export default function ExperienceEducation() {
                     Bachelor&apos;s Degree
                   </span>
                   <span className="rounded-full border border-line bg-surface2 px-2 py-0.5 font-mono text-xs text-signal">
-                    9th–10th Semester · In Progress
+                    10th Semester · In Progress
                   </span>
                 </div>
               </div>
