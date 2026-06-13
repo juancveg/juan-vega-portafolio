@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #05080f;
+  color: #e8eef6;
+}
+
+/* Subtle dot-grid texture used on cards & sections, network-node motif */
+.dot-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(34, 211, 238, 0.16) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+/* Section eyebrow divider line */
+.eyebrow-line {
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.5), transparent);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #05080f;
+}
+::-webkit-scrollbar-thumb {
+  background: #1d2a3a;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #22d3ee;
+}
+
+/* Keyboard focus visibility */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
