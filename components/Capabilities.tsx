@@ -10,6 +10,7 @@ import {
   Heart,
   Workflow,
   ScanEye,
+  Database,
 } from "lucide-react";
 import {
   SiPython,
@@ -21,7 +22,6 @@ import {
   SiHtml5,
   SiTailwindcss,
   SiMysql,
-  SiOracle,
   SiGit,
   SiGithub,
   SiCloudinary,
@@ -93,7 +93,7 @@ const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string }[
     title: "Databases & Tools",
     items: [
       { icon: SiMysql, label: "MySQL" },
-      { icon: SiOracle, label: "Oracle" },
+      { icon: Database, label: "Oracle" },
       { icon: SiGit, label: "Git" },
       { icon: SiGithub, label: "GitHub" },
       { icon: SiCloudinary, label: "Cloudinary" },
