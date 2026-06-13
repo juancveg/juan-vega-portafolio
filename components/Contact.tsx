@@ -6,7 +6,7 @@ type ContactItem = {
   label: string;
   value: string;
   href: string;
-  icon: ComponentType<{ size?: number; className?: string }>;
+  icon: ComponentType<any>;
   accent: string;
 };
 
