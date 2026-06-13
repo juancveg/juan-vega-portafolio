@@ -27,6 +27,19 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.svg",
   },
+  openGraph: {
+    title: "Juan Vega - Portfolio",
+    description:
+      "Juan Carlos Vega Rojano - Systems Engineering student specializing in fullstack development, AI/computer vision and network infrastructure.",
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Juan Vega - Portfolio",
+    description:
+      "Juan Carlos Vega Rojano - Systems Engineering student specializing in fullstack development, AI/computer vision and network infrastructure.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
