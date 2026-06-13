@@ -19,7 +19,7 @@ import {
   SiReact,
   SiJavascript,
   SiHtml5,
-  SiCss3,
+  SiTailwindcss,
   SiMysql,
   SiOracle,
   SiGit,
@@ -86,7 +86,7 @@ const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string }[
       { icon: SiReact, label: "React" },
       { icon: SiJavascript, label: "JavaScript" },
       { icon: SiHtml5, label: "HTML5" },
-      { icon: SiCss3, label: "CSS3" },
+      { icon: SiTailwindcss, label: "Tailwind CSS" },
     ],
   },
   {
