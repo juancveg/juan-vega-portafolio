@@ -65,6 +65,12 @@ const EXPERIENCE: ExperienceItem[] = [
 
 const COMPLEMENTARY = [
   {
+    title: "Networking Basics",
+    org: "Cisco Networking Academy",
+    date: "Jun 2026",
+    tag: "Certificate",
+  },
+  {
     title: "Database Administrator Course",
     org: "Capacítate para el Empleo, Barranquilla",
     date: "Sep 2025",
