@@ -68,22 +68,6 @@ const SOFT_SKILLS: { icon: AnyIcon; title: string; description: string }[] = [
 
 const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string }[] }[] = [
   {
-    title: "AI & Computer Vision",
-    items: [
-      { icon: SiPython, label: "Python" },
-      { icon: SiFlask, label: "Flask" },
-      { icon: ScanEye, label: "YOLOv11" },
-    ],
-  },
-  {
-    title: "Backend Development",
-    items: [
-      { icon: SiNodedotjs, label: "Node.js" },
-      { icon: SiExpress, label: "Express" },
-      { icon: FaJava, label: "Java" },
-    ],
-  },
-  {
     title: "Frontend Development",
     items: [
       { icon: SiReact, label: "React" },
@@ -93,19 +77,40 @@ const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string }[
     ],
   },
   {
-    title: "Networking & Infrastructure",
+    title: "Backend Development",
     items: [
-      { icon: Router, label: "Cisco Packet Tracer" },
+      { icon: SiNodedotjs, label: "Node.js" },
+      { icon: SiExpress, label: "Express" },
+      { icon: FaJava, label: "Java" },
+      { icon: SiFlask, label: "Flask" },
+    ],
+  },
+  {
+    title: "AI & Computer Vision",
+    items: [
+      { icon: SiPython, label: "Python" },
+      { icon: ScanEye, label: "YOLOv11" },
       { icon: Network, label: "Scapy" },
+    ],
+  },
+  {
+    title: "Databases",
+    items: [
+      { icon: SiMysql, label: "MySQL" },
+      { icon: Database, label: "Oracle" },
+    ],
+  },
+  {
+    title: "Networking & Systems",
+    items: [
       { icon: Globe, label: "TCP/IP" },
+      { icon: Router, label: "Cisco Packet Tracer" },
       { icon: Database, label: "Oracle VirtualBox" },
     ],
   },
   {
-    title: "Databases & Tools",
+    title: "DevOps & Tools",
     items: [
-      { icon: SiMysql, label: "MySQL" },
-      { icon: Database, label: "Oracle" },
       { icon: SiGit, label: "Git" },
       { icon: SiGithub, label: "GitHub" },
       { icon: SiCloudinary, label: "Cloudinary" },
@@ -160,7 +165,7 @@ export default function Capabilities() {
             ))}
           </div>
         ) : (
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {TECH_CATEGORIES.map((category) => (
               <div key={category.title} className="rounded-xl border border-line bg-surface p-5">
                 <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-muted">
