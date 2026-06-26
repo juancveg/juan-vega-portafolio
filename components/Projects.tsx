@@ -13,7 +13,14 @@ type Project = {
   image: string;
 };
 
-const CATEGORIES = ["All", "AI & Computer Vision", "Web Development", "Geolocation"];
+const CATEGORIES = [
+  "All",
+  "AI",
+  "Computer Vision",
+  "Web Development",
+  "Networking",
+  "Geolocation",
+];
 
 const PROJECTS: Project[] = [
   {
@@ -22,7 +29,7 @@ const PROJECTS: Project[] = [
       "Smart safety platform that monitors Personal Protective Equipment (PPE) compliance on construction sites in real time.",
     highlight: "Improving safety on construction projects",
     tags: ["React", "Node.js", "Express", "Python", "Flask", "YOLOv11", "MySQL", "Cloudinary"],
-    categories: ["AI & Computer Vision", "Web Development"],
+    categories: ["AI", "Computer Vision", "Web Development"],
     github: "https://github.com/jhanhrndz/buildsafe-frontend",
     image: "/projects/buildsafe.png",
   },
@@ -45,6 +52,16 @@ const PROJECTS: Project[] = [
     categories: ["Geolocation", "Web Development"],
     github: "https://github.com/jhanhrndz/transpormap",
     image: "/projects/transpormap.png",
+  },
+  {
+    title: "Network Analyzer Dashboard",
+    description:
+      "Tool that scans a local network using ARP and ICMP, calculates subnets with VLSM, and visualizes the topology as an interactive star-layout dashboard — built to apply Cisco Networking Basics concepts in real code.",
+    highlight: "Making networking theory concrete and measurable",
+    tags: ["Python", "Scapy", "ARP", "ICMP", "VLSM", "Subnetting", "HTML", "Cisco"],
+    categories: ["Networking"],
+    github: "https://github.com/juancveg/Network-Analyzer-Dashboard",
+    image: "/projects/network-analyzer.png",
   },
 ];
 
