@@ -11,6 +11,9 @@ import {
   Workflow,
   ScanEye,
   Database,
+  Network,
+  Router,
+  Globe,
 } from "lucide-react";
 import {
   SiPython,
@@ -87,6 +90,15 @@ const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string }[
       { icon: SiJavascript, label: "JavaScript" },
       { icon: SiHtml5, label: "HTML5" },
       { icon: SiTailwindcss, label: "Tailwind CSS" },
+    ],
+  },
+  {
+    title: "Networking & Infrastructure",
+    items: [
+      { icon: Router, label: "Cisco Packet Tracer" },
+      { icon: Network, label: "Scapy" },
+      { icon: Globe, label: "TCP/IP" },
+      { icon: Database, label: "Oracle VirtualBox" },
     ],
   },
   {
