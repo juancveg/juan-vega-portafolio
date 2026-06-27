@@ -30,19 +30,21 @@ export default function Hero() {
           <span className="text-ink">,</span>{" "}
           <span className="text-ink">Cloud</span>
           <span className="text-ink"> &amp; </span>
-          <span className="text-pulse">Segurity</span>
+          <span className="text-pulse">Security</span>
         </p>
 
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-          Systems Engineering student (10th semester) with 2+ years of experience in
-          customer service and independent tech operations. I lead academic projects
-          in <span className="text-ink">fullstack development</span>,{" "}
-          <span className="text-ink">AI-powered computer vision</span> and{" "}
-          <span className="text-ink">e-commerce platforms</span>, designing database,
-          geolocation and digital-inclusion solutions with{" "}
-          <span className="text-signal">React</span>,{" "}
-          <span className="text-signal">Node.js</span>,{" "}
-          <span className="text-pulse">Python</span> and{" "}
+          10th-semester Systems Engineering student specializing in{" "}
+          <span className="text-ink font-medium">full-stack development</span>,{" "}
+          <span className="text-ink font-medium">network infrastructure</span>, and{" "}
+          <span className="text-ink font-medium">cloud solutions</span>. I lead impactful
+          projects — ranging from{" "}
+          <span className="text-signal">AI-powered computer vision platforms</span> to{" "}
+          <span className="text-signal">network monitoring dashboards</span> — designing
+          secure, scalable architectures using{" "}
+          <span className="text-pulse">React</span>,{" "}
+          <span className="text-pulse">Node.js</span>,{" "}
+          <span className="text-pulse">Python</span>, and{" "}
           <span className="text-pulse">Java</span>.
         </p>
 
