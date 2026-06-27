@@ -28,9 +28,9 @@ export default function Hero() {
           <span className="text-muted">|</span>{" "}
           <span className="text-signal">Networks</span>
           <span className="text-ink">,</span>{" "}
-          <span className="text-ink">IT Management</span>
+          <span className="text-ink">Cloud</span>
           <span className="text-ink"> &amp; </span>
-          <span className="text-pulse">Database Management</span>
+          <span className="text-pulse">Segurity</span>
         </p>
 
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
