@@ -78,37 +78,48 @@ const COMPLEMENTARY = [
   },
 ];
 
-function TimelineItem({
+/**
+ * Timeline strategy: a single continuous line runs down the left side of the
+ * entire list container (position: absolute, top-0 to bottom-0 on the wrapper).
+ * Each item only contributes its dot — no per-item line segment, so there are
+ * no gaps or overflows between cards regardless of card height.
+ */
+function TimelineList({
   children,
   color = "signal",
-  last = false,
 }: {
   children: React.ReactNode;
   color?: "signal" | "pulse";
-  last?: boolean;
 }) {
-  const dotColor =
-    color === "pulse" ? "border-pulse" : "border-signal";
   return (
     <div className="relative pl-8">
-      {/* dot */}
+      {/* single continuous line for the whole list */}
       <span
-        className={`absolute left-0 top-5 h-3 w-3 rounded-full border-2 bg-base ${dotColor}`}
+        className={`absolute left-[5px] top-5 bottom-5 w-px ${
+          color === "pulse" ? "bg-pulse/25" : "bg-signal/25"
+        }`}
       />
-      {/* vertical line — hidden on last item */}
-      {!last && (
-        <span className="absolute left-[5px] top-8 bottom-0 w-px bg-line" />
-      )}
-      {children}
+      <div className="space-y-4">{children}</div>
     </div>
   );
 }
 
-function ExperienceCard({ item, last }: { item: ExperienceItem; last: boolean }) {
+function TimelineDot({ color = "signal" }: { color?: "signal" | "pulse" }) {
+  return (
+    <span
+      className={`absolute -left-8 top-5 h-3 w-3 rounded-full border-2 bg-base ${
+        color === "pulse" ? "border-pulse" : "border-signal"
+      }`}
+    />
+  );
+}
+
+function ExperienceCard({ item }: { item: ExperienceItem }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <TimelineItem color="signal" last={last}>
+    <div className="relative">
+      <TimelineDot color="signal" />
       <button
         onClick={() => setOpen((o) => !o)}
         className="w-full rounded-xl border border-line bg-surface p-5 text-left transition-colors hover:border-signal/40"
@@ -148,7 +159,7 @@ function ExperienceCard({ item, last }: { item: ExperienceItem; last: boolean })
           </ul>
         )}
       </button>
-    </TimelineItem>
+    </div>
   );
 }
 
@@ -165,15 +176,11 @@ export default function ExperienceEducation() {
             <span className="eyebrow-line h-px flex-1" />
           </div>
 
-          <div className="space-y-4">
-            {EXPERIENCE.map((item, i) => (
-              <ExperienceCard
-                key={item.role}
-                item={item}
-                last={i === EXPERIENCE.length - 1}
-              />
+          <TimelineList color="signal">
+            {EXPERIENCE.map((item) => (
+              <ExperienceCard key={item.role} item={item} />
             ))}
-          </div>
+          </TimelineList>
         </div>
 
         {/* ── EDUCATION ── */}
@@ -184,10 +191,11 @@ export default function ExperienceEducation() {
             <span className="eyebrow-line h-px flex-1" />
           </div>
 
-          <div className="space-y-4">
+          <TimelineList color="pulse">
 
-            {/* Systems Engineering degree */}
-            <TimelineItem color="pulse" last={false}>
+            {/* Systems Engineering */}
+            <div className="relative">
+              <TimelineDot color="pulse" />
               <div className="rounded-xl border border-line bg-surface p-5">
                 <div className="flex items-start gap-3">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line bg-surface2 text-pulse">
@@ -213,10 +221,11 @@ export default function ExperienceEducation() {
                   </span>
                 </div>
               </div>
-            </TimelineItem>
+            </div>
 
             {/* English — Foreign Languages Program */}
-            <TimelineItem color="pulse" last={false}>
+            <div className="relative">
+              <TimelineDot color="pulse" />
               <div className="rounded-xl border border-line bg-surface p-5">
                 <div className="flex items-start gap-3">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line bg-surface2 text-pulse">
@@ -242,10 +251,11 @@ export default function ExperienceEducation() {
                   </span>
                 </div>
               </div>
-            </TimelineItem>
+            </div>
 
             {/* Complementary Training */}
-            <TimelineItem color="pulse" last={false}>
+            <div className="relative">
+              <TimelineDot color="pulse" />
               <div className="rounded-xl border border-line bg-surface p-5">
                 <h3 className="font-display text-base font-semibold text-ink">Complementary Training</h3>
                 <ul className="mt-3 space-y-3">
@@ -263,24 +273,9 @@ export default function ExperienceEducation() {
                   ))}
                 </ul>
               </div>
-            </TimelineItem>
+            </div>
 
-            {/* Languages */}
-            <TimelineItem color="pulse" last={true}>
-              <div className="rounded-xl border border-line bg-surface p-5">
-                <h3 className="font-display text-base font-semibold text-ink">Languages</h3>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <span className="rounded-full border border-line bg-surface2 px-3 py-1 text-sm text-ink">
-                    Spanish — Native
-                  </span>
-                  <span className="rounded-full border border-line bg-surface2 px-3 py-1 text-sm text-ink">
-                    English — B2
-                  </span>
-                </div>
-              </div>
-            </TimelineItem>
-
-          </div>
+          </TimelineList>
         </div>
 
       </div>
