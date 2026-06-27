@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, MapPin, Calendar, GraduationCap } from "lucide-react";
+import { ChevronDown, MapPin, Calendar, GraduationCap, Languages } from "lucide-react";
 
 type ExperienceItem = {
   role: string;
@@ -23,18 +23,6 @@ const EXPERIENCE: ExperienceItem[] = [
       "Built a web platform to monitor PPE (Personal Protective Equipment) use on construction sites using React, Node.js and Express.",
       "Integrated a Python/Flask AI service running YOLOv11 for automatic image-based PPE detection.",
       "Implemented user management and interactive dashboards backed by MySQL, with media stored on Cloudinary, under agile delivery.",
-    ],
-  },
-  {
-    role: "Customer Service Advisor & Tech Operator",
-    org: "Espejo Mágico (Independent Venture)",
-    location: "Barranquilla, Atlántico",
-    period: "Jan 2022 – Dec 2024",
-    tag: "Independent",
-    bullets: [
-      "Configured, operated and maintained an interactive photo-booth station, covering capture, printing software and hardware.",
-      "Guided users through the interactive interface in real time, resolving incidents on the spot during social and corporate events.",
-      "Sustained a 100% client satisfaction rate while customizing the booth's UI to reduce per-session wait times.",
     ],
   },
   {
@@ -90,14 +78,37 @@ const COMPLEMENTARY = [
   },
 ];
 
-function ExperienceCard({ item }: { item: ExperienceItem }) {
+function TimelineItem({
+  children,
+  color = "signal",
+  last = false,
+}: {
+  children: React.ReactNode;
+  color?: "signal" | "pulse";
+  last?: boolean;
+}) {
+  const dotColor =
+    color === "pulse" ? "border-pulse" : "border-signal";
+  return (
+    <div className="relative pl-8">
+      {/* dot */}
+      <span
+        className={`absolute left-0 top-5 h-3 w-3 rounded-full border-2 bg-base ${dotColor}`}
+      />
+      {/* vertical line — hidden on last item */}
+      {!last && (
+        <span className="absolute left-[5px] top-8 bottom-0 w-px bg-line" />
+      )}
+      {children}
+    </div>
+  );
+}
+
+function ExperienceCard({ item, last }: { item: ExperienceItem; last: boolean }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="relative pl-8">
-      <span className="absolute left-0 top-5 h-3 w-3 rounded-full border-2 border-signal bg-base" />
-      <span className="absolute left-[5px] top-8 h-[calc(100%-1rem)] w-px bg-line" />
-
+    <TimelineItem color="signal" last={last}>
       <button
         onClick={() => setOpen((o) => !o)}
         className="w-full rounded-xl border border-line bg-surface p-5 text-left transition-colors hover:border-signal/40"
@@ -137,7 +148,7 @@ function ExperienceCard({ item }: { item: ExperienceItem }) {
           </ul>
         )}
       </button>
-    </div>
+    </TimelineItem>
   );
 }
 
@@ -145,21 +156,27 @@ export default function ExperienceEducation() {
   return (
     <section className="border-b border-line">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-2">
-        {/* Experience */}
+
+        {/* ── EXPERIENCE ── */}
         <div id="experience">
           <div className="mb-8 flex items-center gap-3">
             <span className="h-1.5 w-1.5 rounded-full bg-signal" />
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted">Experience</span>
             <span className="eyebrow-line h-px flex-1" />
           </div>
+
           <div className="space-y-4">
-            {EXPERIENCE.map((item) => (
-              <ExperienceCard key={item.role} item={item} />
+            {EXPERIENCE.map((item, i) => (
+              <ExperienceCard
+                key={item.role}
+                item={item}
+                last={i === EXPERIENCE.length - 1}
+              />
             ))}
           </div>
         </div>
 
-        {/* Education */}
+        {/* ── EDUCATION ── */}
         <div id="education">
           <div className="mb-8 flex items-center gap-3">
             <span className="h-1.5 w-1.5 rounded-full bg-pulse" />
@@ -168,11 +185,9 @@ export default function ExperienceEducation() {
           </div>
 
           <div className="space-y-4">
-            {/* Main degree */}
-            <div className="relative pl-8">
-              <span className="absolute left-0 top-5 h-3 w-3 rounded-full border-2 border-pulse bg-base" />
-              <span className="absolute left-[5px] top-8 h-[calc(100%-1rem)] w-px bg-line" />
 
+            {/* Systems Engineering degree */}
+            <TimelineItem color="pulse" last={false}>
               <div className="rounded-xl border border-line bg-surface p-5">
                 <div className="flex items-start gap-3">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line bg-surface2 text-pulse">
@@ -183,14 +198,12 @@ export default function ExperienceEducation() {
                     <p className="text-sm text-ink/80">Universidad Simón Bolívar</p>
                   </div>
                 </div>
-
                 <p className="mt-3 flex items-center gap-1.5 text-sm text-muted">
                   <MapPin size={13} /> Barranquilla, Atlántico
                 </p>
                 <p className="mt-1 flex items-center gap-1.5 font-mono text-xs text-muted">
                   <Calendar size={12} /> Feb 2022 – Present
                 </p>
-
                 <div className="mt-3 flex flex-wrap gap-2">
                   <span className="rounded-full border border-line bg-surface2 px-2 py-0.5 font-mono text-xs text-pulse">
                     Bachelor&apos;s Degree
@@ -200,13 +213,39 @@ export default function ExperienceEducation() {
                   </span>
                 </div>
               </div>
-            </div>
+            </TimelineItem>
 
-            {/* Complementary training */}
-            <div className="relative pl-8">
-              <span className="absolute left-0 top-5 h-3 w-3 rounded-full border-2 border-pulse bg-base" />
-              <span className="absolute left-[5px] top-8 h-[calc(100%-1rem)] w-px bg-line" />
+            {/* English — Foreign Languages Program */}
+            <TimelineItem color="pulse" last={false}>
+              <div className="rounded-xl border border-line bg-surface p-5">
+                <div className="flex items-start gap-3">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line bg-surface2 text-pulse">
+                    <Languages size={18} />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-base font-semibold text-ink">English</h3>
+                    <p className="text-sm text-ink/80">Foreign Languages Program · Universidad Simón Bolívar</p>
+                  </div>
+                </div>
+                <p className="mt-3 flex items-center gap-1.5 text-sm text-muted">
+                  <MapPin size={13} /> Barranquilla, Atlántico
+                </p>
+                <p className="mt-1 flex items-center gap-1.5 font-mono text-xs text-muted">
+                  <Calendar size={12} /> Jul 2022 – Jun 2025
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <span className="rounded-full border border-line bg-surface2 px-2 py-0.5 font-mono text-xs text-pulse">
+                    Language Certificate
+                  </span>
+                  <span className="rounded-full border border-line bg-surface2 px-2 py-0.5 font-mono text-xs text-signal">
+                    B2 Level
+                  </span>
+                </div>
+              </div>
+            </TimelineItem>
 
+            {/* Complementary Training */}
+            <TimelineItem color="pulse" last={false}>
               <div className="rounded-xl border border-line bg-surface p-5">
                 <h3 className="font-display text-base font-semibold text-ink">Complementary Training</h3>
                 <ul className="mt-3 space-y-3">
@@ -224,12 +263,10 @@ export default function ExperienceEducation() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </TimelineItem>
 
             {/* Languages */}
-            <div className="relative pl-8">
-              <span className="absolute left-0 top-5 h-3 w-3 rounded-full border-2 border-pulse bg-base" />
-
+            <TimelineItem color="pulse" last={true}>
               <div className="rounded-xl border border-line bg-surface p-5">
                 <h3 className="font-display text-base font-semibold text-ink">Languages</h3>
                 <div className="mt-3 flex flex-wrap gap-2">
@@ -241,9 +278,11 @@ export default function ExperienceEducation() {
                   </span>
                 </div>
               </div>
-            </div>
+            </TimelineItem>
+
           </div>
         </div>
+
       </div>
     </section>
   );
