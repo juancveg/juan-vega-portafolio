@@ -64,18 +64,6 @@ const COMPLEMENTARY = [
     date: "Sep 2025",
     tag: "Certificate",
   },
-  {
-    title: "Basic Computing Course",
-    org: "Capacítate para el Empleo, Barranquilla",
-    date: "Mar 2025",
-    tag: "Certificate",
-  },
-  {
-    title: "Administrative Assistant Technician",
-    org: "CODETEC, Barranquilla",
-    date: "Dec 2021",
-    tag: "Technical Program",
-  },
 ];
 
 /**
