@@ -45,7 +45,7 @@ export default function Hero() {
           <span className="text-pulse">React</span>,{" "}
           <span className="text-pulse">Node.js</span>,{" "}
           <span className="text-pulse">Python</span>, and{" "}
-          <span className="text-pulse">Java</span>.
+          <span className="text-pulse">JavaScript</span>.
         </p>
 
         <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-pulse/30 bg-pulse/10 px-4 py-1.5 font-mono text-sm text-pulse">
