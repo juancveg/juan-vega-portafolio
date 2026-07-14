@@ -15,13 +15,21 @@ const COMPLEMENTARY = [
     date: "Sep 2025",
     tag: "Certificate",
   },
+  {
+    title: "Basic Computing Course",
+    org: "Capacítate para el Empleo, Barranquilla",
+    date: "Mar 2025",
+    tag: "Certificate",
+  },
+  {
+    title: "Administrative Assistant Technician",
+    org: "CODETEC, Barranquilla",
+    date: "Dec 2021",
+    tag: "Technical Program",
+  },
 ];
 
-function TimelineList({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+function TimelineList({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative pl-8">
       <span className="absolute left-[5px] top-5 bottom-5 w-px bg-pulse/25" />
@@ -47,7 +55,6 @@ export default function Education() {
           <span className="eyebrow-line h-px flex-1" />
         </div>
 
-        {/* Two-column grid for cards, single timeline line on the left */}
         <TimelineList>
 
           {/* Row 1 — degree + english side by side */}
@@ -111,12 +118,12 @@ export default function Education() {
             </div>
           </div>
 
-          {/* Row 2 — complementary training full width */}
+          {/* Row 2 — complementary training 2x2 grid */}
           <div className="relative">
             <TimelineDot />
             <div className="rounded-xl border border-line bg-surface p-5">
-              <h3 className="font-display text-base font-semibold text-ink">Complementary Training</h3>
-              <div className="mt-3 grid gap-3 sm:grid-cols-2">
+              <h3 className="font-display text-base font-semibold text-ink mb-4">Complementary Training</h3>
+              <div className="grid gap-3 sm:grid-cols-2">
                 {COMPLEMENTARY.map((c) => (
                   <div key={c.title} className="rounded-lg border border-line bg-surface2 p-4">
                     <p className="text-sm font-medium text-ink">{c.title}</p>
