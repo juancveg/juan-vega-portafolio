@@ -34,18 +34,19 @@ export default function Hero() {
         </p>
 
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-          10th-semester Systems Engineering student specializing in{" "}
-          <span className="text-ink font-medium">full-stack development</span>,{" "}
-          <span className="text-ink font-medium">network infrastructure</span>, and{" "}
-          <span className="text-ink font-medium">cloud solutions</span>. I lead impactful
-          projects — ranging from{" "}
-          <span className="text-signal">AI-powered computer vision platforms</span> to{" "}
-          <span className="text-signal">network monitoring dashboards</span> — designing
-          secure, scalable architectures using{" "}
-          <span className="text-pulse">React</span>,{" "}
-          <span className="text-pulse">Node.js</span>,{" "}
-          <span className="text-pulse">Python</span>, and{" "}
-          <span className="text-pulse">JavaScript</span>.
+          10th-semester Systems Engineering student with a{" "}
+          <span className="text-signal font-medium">Cisco-backed foundation</span> in{" "}
+          <span className="text-signal font-medium">network infrastructure</span>,{" "}
+          <span className="text-signal font-medium">IP addressing</span>, and{" "}
+          <span className="text-signal font-medium">routing</span>. I build tools for{" "}
+          <span className="text-signal font-medium">network monitoring</span> and{" "}
+          <span className="text-signal font-medium">traffic analysis</span> — like automated{" "}
+          <span className="text-signal font-medium">subnet calculation with VLSM</span> — using{" "}
+          <span className="text-signal font-medium">Python</span>,{" "}
+          <span className="text-signal font-medium">Scapy</span>, and{" "}
+          <span className="text-signal font-medium">Cisco Packet Tracer</span>, while expanding into{" "}
+          <span className="text-ink font-medium">cloud</span> and{" "}
+          <span className="text-pulse font-medium">cybersecurity</span>.
         </p>
 
         <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-pulse/30 bg-pulse/10 px-4 py-1.5 font-mono text-sm text-pulse">
