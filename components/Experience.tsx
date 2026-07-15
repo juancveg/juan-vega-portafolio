@@ -112,14 +112,6 @@ export default function Education() {
                   58/100 · Reading C2
                 </span>
               </div>
-              <a
-                href="https://cert.efset.org/kDBTFU"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-signal hover:underline"
-              >
-                cert.efset.org/kDBTFU ↗
-              </a>
             </div>
           </div>
 
