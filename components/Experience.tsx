@@ -90,31 +90,36 @@ export default function Education() {
               </div>
             </div>
 
-            {/* English */}
+            {/* English — EF SET Certificate */}
             <div className="rounded-xl border border-line bg-surface p-5 h-full">
               <div className="flex items-start gap-3">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line bg-surface2 text-pulse">
                   <Languages size={18} />
                 </div>
                 <div>
-                  <h3 className="font-display text-base font-semibold text-ink">English</h3>
-                  <p className="text-sm text-ink/80">Foreign Languages Program · Universidad Simón Bolívar</p>
+                  <h3 className="font-display text-base font-semibold text-ink">English — EF SET Certificate</h3>
+                  <p className="text-sm text-ink/80">EF Standard English Test</p>
                 </div>
               </div>
-              <p className="mt-3 flex items-center gap-1.5 text-sm text-muted">
-                <MapPin size={13} /> Barranquilla, Atlántico
-              </p>
-              <p className="mt-1 flex items-center gap-1.5 font-mono text-xs text-muted">
-                <Calendar size={12} /> Jul 2022 – Jun 2025
+              <p className="mt-3 flex items-center gap-1.5 font-mono text-xs text-muted">
+                <Calendar size={12} /> Jul 15, 2026
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <span className="rounded-full border border-line bg-surface2 px-2 py-0.5 font-mono text-xs text-pulse">
-                  Language Certificate
+                  B2 Upper Intermediate
                 </span>
                 <span className="rounded-full border border-line bg-surface2 px-2 py-0.5 font-mono text-xs text-signal">
-                  B2 Level
+                  58/100 · Reading C2
                 </span>
               </div>
+              <a
+                href="https://cert.efset.org/kDBTFU"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-signal hover:underline"
+              >
+                cert.efset.org/kDBTFU ↗
+              </a>
             </div>
           </div>
 
