@@ -63,6 +63,16 @@ const PROJECTS: Project[] = [
     github: "https://github.com/juancveg/Network-Analyzer-Dashboard",
     image: "/projects/network-analyzer.png",
   },
+  {
+    title: "TechNova S.A.S. — Corporate VLAN Lab",
+    description:
+      "Cisco Packet Tracer lab that designs and implements the segmented internal network of a fictional company: 3-VLAN architecture with inter-VLAN routing (router-on-a-stick), VLSM subnetting, DHCP pools, internal DNS/HTTP server, Port Security (Layer 2), and ACL-based inter-VLAN access control (Layer 3). 100% connectivity and 100% ACL blocking verified.",
+    highlight: "Applying enterprise networking concepts end-to-end",
+    tags: ["Cisco Packet Tracer", "VLANs", "802.1Q", "VLSM", "DHCP", "ACLs", "Port Security", "DNS", "Router-on-a-Stick"],
+    categories: ["Networking"],
+    github: "https://github.com/juancveg/technova-vlan-lab",
+    image: "/projects/technova-vlan.png",
+  },
 ];
 
 export default function Projects() {
