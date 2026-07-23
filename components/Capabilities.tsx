@@ -105,6 +105,7 @@ const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string }[
     items: [
       { icon: Globe, label: "TCP/IP" },
       { icon: Router, label: "Cisco Packet Tracer" },
+      { icon: Network, label: "VLANs / 802.1Q" },
       { icon: Database, label: "Oracle VirtualBox" },
     ],
   },
