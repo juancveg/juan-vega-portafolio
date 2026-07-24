@@ -126,7 +126,7 @@ export default function Projects() {
           {visible.map((project) => (
             <div
               key={project.title}
-              className="flex h-[450px] flex-col overflow-hidden rounded-xl border border-line bg-surface transition-colors hover:border-signal/40"
+              className="flex h-[480px] flex-col overflow-hidden rounded-xl border border-line bg-surface transition-colors hover:border-signal/40"
             >
               <div className="relative aspect-video shrink-0 overflow-hidden bg-surface2">
                 <img
