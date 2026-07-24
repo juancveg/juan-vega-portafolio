@@ -34,19 +34,16 @@ export default function Hero() {
         </p>
 
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-          10th-semester Systems Engineering student with a{" "}
-          <span className="text-signal font-medium">Cisco-backed foundation</span> in{" "}
+          10th-semester Systems Engineering student focused on{" "}
           <span className="text-signal font-medium">network infrastructure</span>,{" "}
-          <span className="text-signal font-medium">IP addressing</span>, and{" "}
-          <span className="text-signal font-medium">routing</span>. I build tools for{" "}
-          <span className="text-signal font-medium">network monitoring</span> and{" "}
-          <span className="text-signal font-medium">traffic analysis</span> — like automated{" "}
-          <span className="text-signal font-medium">subnet calculation with VLSM</span> — using{" "}
-          <span className="text-signal font-medium">Python</span>,{" "}
-          <span className="text-signal font-medium">Scapy</span>, and{" "}
-          <span className="text-signal font-medium">Cisco Packet Tracer</span>, while expanding into{" "}
-          <span className="text-ink font-medium">cloud</span> and{" "}
-          <span className="text-pulse font-medium">cybersecurity</span>.
+          <span className="text-signal font-medium">IT support</span>, and{" "}
+          <span className="text-ink font-medium">cloud solutions</span>. I build practical
+          tools that apply real networking concepts — from{" "}
+          <span className="text-signal font-medium">corporate VLAN architectures</span> to{" "}
+          <span className="text-signal font-medium">network diagnostic dashboards</span> —
+          backed by a certified{" "}
+          <span className="text-pulse font-medium">B2 English</span> level and a strong
+          commitment to continuous learning.
         </p>
 
         <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-pulse/30 bg-pulse/10 px-4 py-1.5 font-mono text-sm text-pulse">
