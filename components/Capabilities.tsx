@@ -181,10 +181,15 @@ export default function Capabilities() {
                   {category.items.map(({ icon: Icon, label }) => (
                     <div
                       key={label}
-                      className="flex items-center gap-2 rounded-lg border border-line bg-surface2 px-3 py-2 text-sm text-ink transition-colors hover:border-signal/40"
+                      className="group relative flex items-center gap-2 rounded-lg border border-line bg-surface2 px-3 py-2 text-sm text-ink transition-colors hover:border-signal/40"
                     >
                       <Icon size={15} className="shrink-0 text-signal" />
                       <span className="truncate text-xs">{label}</span>
+                      {/* Tooltip — only visible when text is truncated */}
+                      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-line bg-surface px-3 py-1.5 text-xs text-ink opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
+                        {label}
+                        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-line" />
+                      </span>
                     </div>
                   ))}
                 </div>
