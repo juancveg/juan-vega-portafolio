@@ -24,34 +24,14 @@ const CATEGORIES = [
 
 const PROJECTS: Project[] = [
   {
-    title: "BuildSafe",
+    title: "TechNova — Corporate VLAN Lab",
     description:
-      "Smart safety platform that monitors PPE compliance on construction sites in real time using computer vision.",
-    highlight: "Improving safety on construction projects",
-    tags: ["React", "Node.js", "Express", "Python", "Flask", "YOLOv11", "MySQL", "Cloudinary"],
-    categories: ["AI", "Computer Vision", "Web Development"],
-    github: "https://github.com/jhanhrndz/buildsafe-frontend",
-    image: "/projects/buildsafe.png",
-  },
-  {
-    title: "TiendaYa",
-    description:
-      "E-commerce platform that helps small local shops in Barranquilla go digital, from product listings to order management.",
-    highlight: "Enhancing local e-commerce and digital inclusion",
-    tags: ["React", "Node.js", "Express", "MySQL", "REST API"],
-    categories: ["Web Development"],
-    github: "https://github.com/jhanhrndz/tiendaYa-project",
-    image: "/projects/tiendaya.png",
-  },
-  {
-    title: "TransporMap",
-    description:
-      "Java application that lets transport operators and users report road hazards and obstructions on a live map.",
-    highlight: "Reshaping urban mobility with real-time data",
-    tags: ["Java", "Oracle", "Geolocation", "Maps"],
-    categories: ["Geolocation", "Web Development"],
-    github: "https://github.com/jhanhrndz/transpormap",
-    image: "/projects/transpormap.png",
+      "Cisco Packet Tracer lab implementing a 3-VLAN corporate network with inter-VLAN routing, VLSM, DHCP, DNS, Port Security, and ACLs.",
+    highlight: "Applying enterprise networking concepts end-to-end",
+    tags: ["Cisco Packet Tracer", "VLANs", "802.1Q", "VLSM", "DHCP", "ACLs", "Port Security", "DNS"],
+    categories: ["Networking"],
+    github: "https://github.com/juancveg/technova-vlan-lab",
+    image: "/projects/technova-vlan.png",
   },
   {
     title: "Network Analyzer Dashboard",
@@ -64,14 +44,34 @@ const PROJECTS: Project[] = [
     image: "/projects/network-analyzer.png",
   },
   {
-    title: "TechNova — Corporate VLAN Lab",
+    title: "BuildSafe",
     description:
-      "Cisco Packet Tracer lab implementing a 3-VLAN corporate network with inter-VLAN routing, VLSM, DHCP, DNS, Port Security, and ACLs.",
-    highlight: "Applying enterprise networking concepts end-to-end",
-    tags: ["Cisco Packet Tracer", "VLANs", "802.1Q", "VLSM", "DHCP", "ACLs", "Port Security", "DNS"],
-    categories: ["Networking"],
-    github: "https://github.com/juancveg/technova-vlan-lab",
-    image: "/projects/technova-vlan.png",
+      "Web platform that monitors PPE compliance on construction sites in real time using AI-powered computer vision.",
+    highlight: "Improving safety on construction projects",
+    tags: ["React", "Node.js", "Express", "Python", "Flask", "YOLOv11", "MySQL", "Cloudinary"],
+    categories: ["AI", "Computer Vision", "Web Development"],
+    github: "https://github.com/jhanhrndz/buildsafe-frontend",
+    image: "/projects/buildsafe.png",
+  },
+  {
+    title: "TiendaYa",
+    description:
+      "E-commerce platform that helps small local shops in Barranquilla go digital, managing products and orders online.",
+    highlight: "Enhancing local e-commerce and digital inclusion",
+    tags: ["React", "Node.js", "Express", "MySQL", "REST API"],
+    categories: ["Web Development"],
+    github: "https://github.com/jhanhrndz/tiendaYa-project",
+    image: "/projects/tiendaya.png",
+  },
+  {
+    title: "TransporMap",
+    description:
+      "Java app that lets transport operators report road hazards and obstructions in real time using geolocation.",
+    highlight: "Reshaping urban mobility with real-time data",
+    tags: ["Java", "Oracle", "Geolocation", "Maps"],
+    categories: ["Geolocation", "Web Development"],
+    github: "https://github.com/jhanhrndz/transpormap",
+    image: "/projects/transpormap.png",
   },
 ];
 
@@ -130,8 +130,7 @@ export default function Projects() {
                   <h3 className="font-display text-base font-semibold leading-snug text-ink">
                     {project.title}
                   </h3>
-                  {/* Clamp to 3 lines so all cards share the same description height */}
-                  <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">
+                  <p className="mt-2 text-sm leading-relaxed text-muted">
                     {project.description}
                   </p>
                   {/* Show at most 6 tags to keep badge rows uniform */}
