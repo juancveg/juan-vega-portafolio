@@ -7,13 +7,16 @@ import {
   MessageCircle,
   Shuffle,
   Users,
-  Heart,
+  Search,
   Lightbulb,
   Globe,
   Network,
   Router,
-  Database,
   GitBranch,
+  Database,
+  Terminal,
+  Monitor,
+  GitMerge,
 } from "lucide-react";
 import {
   SiReact,
@@ -25,7 +28,9 @@ import {
   SiMysql,
   SiGit,
   SiGithub,
-  SiWireshark,
+  SiPython,
+  SiLinux,
+  SiWindows,
 } from "react-icons/si";
 
 type AnyIcon = ComponentType<any>;
@@ -52,9 +57,9 @@ const SOFT_SKILLS: { icon: AnyIcon; title: string; description: string }[] = [
     description: "Contributing effectively within diverse teams, sharing responsibility and supporting shared goals.",
   },
   {
-    icon: Heart,
-    title: "Empathy & Customer Focus",
-    description: "Understanding people's needs and delivering attentive, patient, and personalized support.",
+    icon: Search,
+    title: "Attention to Detail",
+    description: "Careful and methodical in diagnosing faults, reviewing configurations, and documenting technical work.",
   },
   {
     icon: Lightbulb,
@@ -70,7 +75,7 @@ const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string; t
       { icon: Globe, label: "TCP/IP" },
       { icon: Network, label: "VLANs / 802.1Q" },
       { icon: Router, label: "Routing & Switching" },
-      { icon: GitBranch, label: "Subnetting / IP Addressing" },
+      { icon: GitBranch, label: "Subnetting / VLSM" },
     ],
   },
   {
@@ -78,7 +83,17 @@ const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string; t
     items: [
       { icon: Router, label: "Cisco Packet Tracer", tooltip: true },
       { icon: Database, label: "Oracle VirtualBox" },
-      { icon: SiWireshark, label: "Scapy" },
+      { icon: Network, label: "Scapy" },
+      { icon: SiPython, label: "Python" },
+    ],
+  },
+  {
+    title: "OS & Infrastructure",
+    items: [
+      { icon: SiWindows, label: "Windows Server" },
+      { icon: SiLinux, label: "Linux CLI" },
+      { icon: SiGit, label: "Git" },
+      { icon: SiGithub, label: "GitHub" },
     ],
   },
   {
@@ -91,24 +106,12 @@ const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string; t
     ],
   },
   {
-    title: "Backend Development",
+    title: "Backend & Databases",
     items: [
       { icon: SiNodedotjs, label: "Node.js" },
       { icon: SiExpress, label: "Express" },
-    ],
-  },
-  {
-    title: "Databases & Data",
-    items: [
       { icon: SiMysql, label: "MySQL" },
       { icon: Database, label: "Oracle" },
-    ],
-  },
-  {
-    title: "Tools & Version Control",
-    items: [
-      { icon: SiGit, label: "Git" },
-      { icon: SiGithub, label: "GitHub" },
     ],
   },
 ];
