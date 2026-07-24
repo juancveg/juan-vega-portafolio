@@ -66,7 +66,7 @@ const SOFT_SKILLS: { icon: AnyIcon; title: string; description: string }[] = [
   },
 ];
 
-const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string }[] }[] = [
+const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string; tooltip?: boolean }[] }[] = [
   {
     title: "Frontend Development",
     items: [
@@ -91,30 +91,25 @@ const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string }[
       { icon: SiPython, label: "Python" },
       { icon: ScanEye, label: "YOLOv11" },
       { icon: Network, label: "Scapy" },
+      { icon: SiCloudinary, label: "Cloudinary" },
     ],
   },
   {
-    title: "Databases",
+    title: "Data & Tools",
     items: [
       { icon: SiMysql, label: "MySQL" },
       { icon: Database, label: "Oracle" },
+      { icon: SiGit, label: "Git" },
+      { icon: SiGithub, label: "GitHub" },
     ],
   },
   {
     title: "Networking & Systems",
     items: [
       { icon: Globe, label: "TCP/IP" },
-      { icon: Router, label: "Cisco Packet Tracer" },
       { icon: Network, label: "VLANs / 802.1Q" },
+      { icon: Router, label: "Cisco Packet Tracer", tooltip: true },
       { icon: Database, label: "Oracle VirtualBox" },
-    ],
-  },
-  {
-    title: "DevOps & Tools",
-    items: [
-      { icon: SiGit, label: "Git" },
-      { icon: SiGithub, label: "GitHub" },
-      { icon: SiCloudinary, label: "Cloudinary" },
     ],
   },
 ];
@@ -167,7 +162,7 @@ export default function Capabilities() {
             ))}
           </div>
         ) : (
-          /* Tech Stack — uniform min-h, items in 2-col grid inside each card */
+          /* Tech Stack — 5 categories × 4 items, uniform 2-col grid inside each card */
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {TECH_CATEGORIES.map((category) => (
               <div
@@ -178,18 +173,21 @@ export default function Capabilities() {
                   {category.title}
                 </h3>
                 <div className="grid grid-cols-2 gap-2">
-                  {category.items.map(({ icon: Icon, label }) => (
+                  {category.items.map(({ icon: Icon, label, tooltip }) => (
                     <div
                       key={label}
-                      className="group relative flex items-center gap-2 rounded-lg border border-line bg-surface2 px-3 py-2 text-sm text-ink transition-colors hover:border-signal/40"
+                      className="group relative flex items-center gap-2 rounded-lg border border-line bg-surface2 px-3 py-2 transition-colors hover:border-signal/40"
                     >
                       <Icon size={15} className="shrink-0 text-signal" />
-                      <span className="truncate text-xs">{label}</span>
-                      {/* Tooltip — only visible when text is truncated */}
-                      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-line bg-surface px-3 py-1.5 text-xs text-ink opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
+                      <span className={`text-xs text-ink${tooltip ? " truncate" : ""}`}>
                         {label}
-                        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-line" />
                       </span>
+                      {tooltip && (
+                        <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-line bg-surface px-3 py-1.5 text-xs text-ink opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
+                          {label}
+                          <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-line" />
+                        </span>
+                      )}
                     </div>
                   ))}
                 </div>
