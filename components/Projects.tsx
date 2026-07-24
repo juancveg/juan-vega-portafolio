@@ -121,8 +121,8 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Cards */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Cards — min-h keeps the grid the same height on all pages */}
+        <div className="grid min-h-[480px] auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((project) => (
             <div
               key={project.title}
