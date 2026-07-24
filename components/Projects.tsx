@@ -26,7 +26,7 @@ const PROJECTS: Project[] = [
   {
     title: "BuildSafe",
     description:
-      "Smart safety platform that monitors Personal Protective Equipment (PPE) compliance on construction sites in real time.",
+      "Smart safety platform that monitors PPE compliance on construction sites in real time using computer vision.",
     highlight: "Improving safety on construction projects",
     tags: ["React", "Node.js", "Express", "Python", "Flask", "YOLOv11", "MySQL", "Cloudinary"],
     categories: ["AI", "Computer Vision", "Web Development"],
@@ -56,7 +56,7 @@ const PROJECTS: Project[] = [
   {
     title: "Network Analyzer Dashboard",
     description:
-      "Tool that scans a local network using ARP and ICMP, calculates subnets with VLSM, and visualizes the topology as an interactive star-layout dashboard — built to apply Cisco Networking Basics concepts in real code.",
+      "Scans a local network via ARP and ICMP, calculates subnets with VLSM, and visualizes the topology as an interactive dashboard.",
     highlight: "Making networking theory concrete and measurable",
     tags: ["Python", "Scapy", "ARP", "ICMP", "VLSM", "Subnetting", "HTML", "Cisco"],
     categories: ["Networking"],
@@ -64,11 +64,11 @@ const PROJECTS: Project[] = [
     image: "/projects/network-analyzer.png",
   },
   {
-    title: "TechNova S.A.S. — Corporate VLAN Lab",
+    title: "TechNova — Corporate VLAN Lab",
     description:
-      "Cisco Packet Tracer lab that designs and implements the segmented internal network of a fictional company: 3-VLAN architecture with inter-VLAN routing (router-on-a-stick), VLSM subnetting, DHCP pools, internal DNS/HTTP server, Port Security (Layer 2), and ACL-based inter-VLAN access control (Layer 3). 100% connectivity and 100% ACL blocking verified.",
+      "Cisco Packet Tracer lab implementing a 3-VLAN corporate network with inter-VLAN routing, VLSM, DHCP, DNS, Port Security, and ACLs.",
     highlight: "Applying enterprise networking concepts end-to-end",
-    tags: ["Cisco Packet Tracer", "VLANs", "802.1Q", "VLSM", "DHCP", "ACLs", "Port Security", "DNS", "Router-on-a-Stick"],
+    tags: ["Cisco Packet Tracer", "VLANs", "802.1Q", "VLSM", "DHCP", "ACLs", "Port Security", "DNS"],
     categories: ["Networking"],
     github: "https://github.com/juancveg/technova-vlan-lab",
     image: "/projects/technova-vlan.png",
@@ -78,14 +78,18 @@ const PROJECTS: Project[] = [
 export default function Projects() {
   const [filter, setFilter] = useState("All");
 
-  const visible = PROJECTS.filter((p) => filter === "All" || p.categories.includes(filter));
+  const visible = PROJECTS.filter(
+    (p) => filter === "All" || p.categories.includes(filter)
+  );
 
   return (
     <section id="projects" className="border-b border-line">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="mb-8 flex items-center gap-3">
           <span className="h-1.5 w-1.5 rounded-full bg-signal" />
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted">Projects</span>
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted">
+            Projects
+          </span>
           <span className="eyebrow-line h-px flex-1" />
         </div>
 
@@ -111,7 +115,8 @@ export default function Projects() {
               key={project.title}
               className="flex flex-col overflow-hidden rounded-xl border border-line bg-surface transition-colors hover:border-signal/40"
             >
-              <div className="relative aspect-video overflow-hidden bg-surface2">
+              {/* Cover image — fixed 16:9 */}
+              <div className="relative aspect-video shrink-0 overflow-hidden bg-surface2">
                 <img
                   src={project.image}
                   alt={`${project.title} preview`}
@@ -119,33 +124,49 @@ export default function Projects() {
                 />
               </div>
 
-              <div className="flex flex-1 flex-col p-5">
-                <h3 className="font-display text-lg font-semibold text-ink">{project.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{project.description}</p>
-
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-line bg-surface2 px-2 py-0.5 font-mono text-xs text-muted"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+              {/* Card body — flex-col with justify-between keeps footer pinned */}
+              <div className="flex flex-1 flex-col justify-between p-5">
+                <div>
+                  <h3 className="font-display text-base font-semibold leading-snug text-ink">
+                    {project.title}
+                  </h3>
+                  {/* Clamp to 3 lines so all cards share the same description height */}
+                  <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">
+                    {project.description}
+                  </p>
+                  {/* Show at most 6 tags to keep badge rows uniform */}
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {project.tags.slice(0, 6).map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-line bg-surface2 px-2 py-0.5 font-mono text-xs text-muted"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                    {project.tags.length > 6 && (
+                      <span className="rounded-full border border-line bg-surface2 px-2 py-0.5 font-mono text-xs text-muted">
+                        +{project.tags.length - 6}
+                      </span>
+                    )}
+                  </div>
                 </div>
 
-                <p className="mt-3 flex items-center gap-1.5 text-sm text-pulse">
-                  <span className="h-1 w-1 rounded-full bg-pulse" /> {project.highlight}
-                </p>
-
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-4 inline-flex items-center gap-2 self-start rounded-full border border-line bg-surface2 px-3 py-1.5 text-sm text-ink transition-colors hover:border-signal/50 hover:text-signal"
-                >
-                  <Github size={15} /> GitHub
-                </a>
+                {/* Footer: highlight + GitHub always at the bottom */}
+                <div className="mt-4">
+                  <p className="flex items-center gap-1.5 text-sm text-pulse">
+                    <span className="h-1 w-1 shrink-0 rounded-full bg-pulse" />
+                    {project.highlight}
+                  </p>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-3 inline-flex items-center gap-2 rounded-full border border-line bg-surface2 px-3 py-1.5 text-sm text-ink transition-colors hover:border-signal/50 hover:text-signal"
+                  >
+                    <Github size={15} /> GitHub
+                  </a>
+                </div>
               </div>
             </div>
           ))}
