@@ -81,14 +81,12 @@ const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string; t
     items: [
       { icon: Router, label: "Cisco Packet Tracer", tooltip: true },
       { icon: Database, label: "Oracle VirtualBox" },
-      { icon: Network, label: "Scapy" },
       { icon: SiPython, label: "Python" },
     ],
   },
   {
     title: "OS & Infrastructure",
     items: [
-      { icon: Monitor, label: "Windows Server" },
       { icon: Terminal, label: "Linux CLI" },
       { icon: SiGit, label: "Git" },
       { icon: SiGithub, label: "GitHub" },
