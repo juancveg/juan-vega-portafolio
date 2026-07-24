@@ -29,8 +29,6 @@ import {
   SiGit,
   SiGithub,
   SiPython,
-  SiLinux,
-  SiWindows,
 } from "react-icons/si";
 
 type AnyIcon = ComponentType<any>;
@@ -90,8 +88,8 @@ const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string; t
   {
     title: "OS & Infrastructure",
     items: [
-      { icon: SiWindows, label: "Windows Server" },
-      { icon: SiLinux, label: "Linux CLI" },
+      { icon: Monitor, label: "Windows Server" },
+      { icon: Terminal, label: "Linux CLI" },
       { icon: SiGit, label: "Git" },
       { icon: SiGithub, label: "GitHub" },
     ],
