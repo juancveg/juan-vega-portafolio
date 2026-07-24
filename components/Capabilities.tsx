@@ -151,13 +151,14 @@ export default function Capabilities() {
         </div>
 
         {tab === "soft" ? (
+          /* Soft Skills — fixed min-h so all 6 cards are the same height */
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {SOFT_SKILLS.map(({ icon: Icon, title, description }) => (
               <div
                 key={title}
-                className="dot-grid rounded-xl border border-line bg-surface p-5 transition-colors hover:border-signal/40"
+                className="dot-grid flex min-h-[172px] flex-col rounded-xl border border-line bg-surface p-5 transition-colors hover:border-signal/40"
               >
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg border border-line bg-surface2 text-signal">
+                <div className="mb-3 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-line bg-surface2 text-signal">
                   <Icon size={18} />
                 </div>
                 <h3 className="font-display text-base font-semibold text-ink">{title}</h3>
@@ -166,20 +167,24 @@ export default function Capabilities() {
             ))}
           </div>
         ) : (
+          /* Tech Stack — uniform min-h, items in 2-col grid inside each card */
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {TECH_CATEGORIES.map((category) => (
-              <div key={category.title} className="rounded-xl border border-line bg-surface p-5">
+              <div
+                key={category.title}
+                className="flex min-h-[160px] flex-col rounded-xl border border-line bg-surface p-5"
+              >
                 <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-muted">
                   {category.title}
                 </h3>
-                <div className="flex flex-wrap gap-3">
+                <div className="grid grid-cols-2 gap-2">
                   {category.items.map(({ icon: Icon, label }) => (
                     <div
                       key={label}
                       className="flex items-center gap-2 rounded-lg border border-line bg-surface2 px-3 py-2 text-sm text-ink transition-colors hover:border-signal/40"
                     >
-                      <Icon size={16} className="text-signal" />
-                      {label}
+                      <Icon size={15} className="shrink-0 text-signal" />
+                      <span className="truncate text-xs">{label}</span>
                     </div>
                   ))}
                 </div>
