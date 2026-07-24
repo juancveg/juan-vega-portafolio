@@ -144,8 +144,17 @@ export default function Projects() {
                       </span>
                     ))}
                     {project.tags.length > 6 && (
-                      <span className="rounded-full border border-line bg-surface2 px-2 py-0.5 font-mono text-xs text-muted">
+                      <span
+                        className="relative rounded-full border border-line bg-surface2 px-2 py-0.5 font-mono text-xs text-muted cursor-default group"
+                        title={project.tags.slice(6).join(", ")}
+                      >
                         +{project.tags.length - 6}
+                        {/* Tooltip */}
+                        <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-line bg-surface px-3 py-1.5 text-xs text-ink opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
+                          {project.tags.slice(6).join(" · ")}
+                          {/* Arrow */}
+                          <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-line" />
+                        </span>
                       </span>
                     )}
                   </div>
