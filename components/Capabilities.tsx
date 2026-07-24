@@ -8,28 +8,25 @@ import {
   Shuffle,
   Users,
   Heart,
-  Workflow,
-  ScanEye,
-  Database,
+  Lightbulb,
+  Globe,
   Network,
   Router,
-  Globe,
+  Database,
+  GitBranch,
 } from "lucide-react";
 import {
-  SiPython,
-  SiFlask,
-  SiNodedotjs,
-  SiExpress,
   SiReact,
   SiJavascript,
   SiHtml5,
   SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
   SiMysql,
   SiGit,
   SiGithub,
-  SiCloudinary,
+  SiWireshark,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
 
 type AnyIcon = ComponentType<any>;
 
@@ -37,40 +34,57 @@ const SOFT_SKILLS: { icon: AnyIcon; title: string; description: string }[] = [
   {
     icon: Puzzle,
     title: "Problem Solving",
-    description: "Breaking down technical challenges and finding practical, working solutions under real constraints.",
+    description: "Identifying root causes quickly and finding clear, practical solutions under pressure.",
   },
   {
     icon: MessageCircle,
     title: "Assertive Communication",
-    description: "Explaining technical ideas clearly to clients, teammates and end users, in Spanish and English (B2).",
+    description: "Expressing ideas and concerns clearly, directly, and respectfully in both Spanish and English.",
   },
   {
     icon: Shuffle,
     title: "Adaptability",
-    description: "Comfortable switching between stacks, roles and real-time requirements without losing pace.",
+    description: "Adjusting to new situations, changing priorities, and unfamiliar environments without losing focus.",
   },
   {
     icon: Users,
     title: "Teamwork & Collaboration",
-    description: "Working across frontend, backend and AI sub-teams to ship academic projects on shared timelines.",
+    description: "Contributing effectively within diverse teams, sharing responsibility and supporting shared goals.",
   },
   {
     icon: Heart,
-    title: "Customer Focus & Empathy",
-    description: "Two+ years guiding users through interactive tech in real time, sustaining a 100% satisfaction record.",
+    title: "Empathy & Customer Focus",
+    description: "Understanding people's needs and delivering attentive, patient, and personalized support.",
   },
   {
-    icon: Workflow,
-    title: "Agile Methodologies",
-    description: "Comfortable with iterative delivery, user validation cycles and confidentiality of sensitive data.",
+    icon: Lightbulb,
+    title: "Continuous Learning",
+    description: "Proactively seeking new knowledge, staying current, and applying what I learn to real situations.",
   },
 ];
 
 const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string; tooltip?: boolean }[] }[] = [
   {
+    title: "Networking & Protocols",
+    items: [
+      { icon: Globe, label: "TCP/IP" },
+      { icon: Network, label: "VLANs / 802.1Q" },
+      { icon: Router, label: "Routing & Switching" },
+      { icon: GitBranch, label: "Subnetting / IP Addressing" },
+    ],
+  },
+  {
+    title: "Network Tools & Systems",
+    items: [
+      { icon: Router, label: "Cisco Packet Tracer", tooltip: true },
+      { icon: Database, label: "Oracle VirtualBox" },
+      { icon: SiWireshark, label: "Scapy" },
+    ],
+  },
+  {
     title: "Frontend Development",
     items: [
-      { icon: SiReact, label: "React" },
+      { icon: SiReact, label: "React.js" },
       { icon: SiJavascript, label: "JavaScript" },
       { icon: SiHtml5, label: "HTML5" },
       { icon: SiTailwindcss, label: "Tailwind CSS" },
@@ -81,35 +95,20 @@ const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string; t
     items: [
       { icon: SiNodedotjs, label: "Node.js" },
       { icon: SiExpress, label: "Express" },
-      { icon: FaJava, label: "Java" },
-      { icon: SiFlask, label: "Flask" },
     ],
   },
   {
-    title: "AI & Computer Vision",
-    items: [
-      { icon: SiPython, label: "Python" },
-      { icon: ScanEye, label: "YOLOv11" },
-      { icon: Network, label: "Scapy" },
-      { icon: SiCloudinary, label: "Cloudinary" },
-    ],
-  },
-  {
-    title: "Data & Tools",
+    title: "Databases & Data",
     items: [
       { icon: SiMysql, label: "MySQL" },
       { icon: Database, label: "Oracle" },
-      { icon: SiGit, label: "Git" },
-      { icon: SiGithub, label: "GitHub" },
     ],
   },
   {
-    title: "Networking & Systems",
+    title: "Tools & Version Control",
     items: [
-      { icon: Globe, label: "TCP/IP" },
-      { icon: Network, label: "VLANs / 802.1Q" },
-      { icon: Router, label: "Cisco Packet Tracer", tooltip: true },
-      { icon: Database, label: "Oracle VirtualBox" },
+      { icon: SiGit, label: "Git" },
+      { icon: SiGithub, label: "GitHub" },
     ],
   },
 ];
@@ -146,7 +145,6 @@ export default function Capabilities() {
         </div>
 
         {tab === "soft" ? (
-          /* Soft Skills — fixed min-h so all 6 cards are the same height */
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {SOFT_SKILLS.map(({ icon: Icon, title, description }) => (
               <div
@@ -162,7 +160,6 @@ export default function Capabilities() {
             ))}
           </div>
         ) : (
-          /* Tech Stack — 5 categories × 4 items, uniform 2-col grid inside each card */
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {TECH_CATEGORIES.map((category) => (
               <div
