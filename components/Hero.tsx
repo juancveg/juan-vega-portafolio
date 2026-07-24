@@ -35,15 +35,13 @@ export default function Hero() {
 
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
           10th-semester Systems Engineering student focused on{" "}
-          <span className="text-signal font-medium">network infrastructure</span>,{" "}
-          <span className="text-signal font-medium">IT support</span>, and{" "}
-          <span className="text-ink font-medium">cloud solutions</span>. I build practical
-          tools that apply real networking concepts — from{" "}
-          <span className="text-signal font-medium">corporate VLAN architectures</span> to{" "}
+          <span className="text-signal font-medium">network operations</span> and{" "}
+          <span className="text-signal font-medium">IT infrastructure support</span>. I build
+          practical tools applying real networking concepts — from{" "}
+          <span className="text-signal font-medium">corporate VLAN architectures</span> with{" "}
+          <span className="text-pulse font-medium">ACL-based security</span> to{" "}
           <span className="text-signal font-medium">network diagnostic dashboards</span> —
-          backed by a certified{" "}
-          <span className="text-pulse font-medium">B2 English</span> level and a strong
-          commitment to continuous learning.
+          backed by a certified B2 English level and a strong commitment to continuous learning.
         </p>
 
         <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-pulse/30 bg-pulse/10 px-4 py-1.5 font-mono text-sm text-pulse">
