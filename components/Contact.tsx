@@ -27,7 +27,7 @@ const CONTACTS: ContactItem[] = [
   },
   {
     label: "LinkedIn",
-    value: "juan-vega-4b1b1233a",
+    value: "juancvegarojano",
     href: "https://www.linkedin.com/in/juancvegarojano",
     icon: Linkedin,
     accent: "text-signal",
