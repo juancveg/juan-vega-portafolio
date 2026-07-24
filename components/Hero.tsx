@@ -51,7 +51,7 @@ export default function Hero() {
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <a
-            href="https://www.linkedin.com/in/juan-vega-4b1b1233a"
+            href="https://www.linkedin.com/in/juancvegarojano"
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2 text-sm text-ink transition-colors hover:border-signal/50 hover:text-signal"
