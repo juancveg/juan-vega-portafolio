@@ -121,12 +121,11 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Cards — fixed height on each card keeps size consistent across pages */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((project) => (
             <div
               key={project.title}
-              className="flex h-[480px] flex-col overflow-hidden rounded-xl border border-line bg-surface transition-colors hover:border-signal/40"
+              className="flex flex-col overflow-hidden rounded-xl border border-line bg-surface transition-colors hover:border-signal/40"
             >
               <div className="relative aspect-video shrink-0 overflow-hidden bg-surface2">
                 <img
