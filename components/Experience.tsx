@@ -22,7 +22,7 @@ const COMPLEMENTARY = [
     tag: "Certificate",
   },
   {
-    title: "Administrative Assistant Technician",
+    title: "Administrative Assistant",
     org: "CODETEC, Barranquilla",
     date: "Dec 2021",
     tag: "Technical Program",
