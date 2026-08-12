@@ -28,7 +28,7 @@ export default function Hero() {
           <span className="text-muted">|</span>{" "}
           <span className="text-signal">Networks</span>
           <span className="text-ink"> &amp; </span>
-          <span className="text-pulse">Security</span>
+          <span className="text-pulse">Cybersecurity</span>
         </p>
 
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
