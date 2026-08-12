@@ -27,8 +27,6 @@ export default function Hero() {
           <span className="text-ink">Systems Engineering Student</span>{" "}
           <span className="text-muted">|</span>{" "}
           <span className="text-signal">Networks</span>
-          <span className="text-ink">,</span>{" "}
-          <span className="text-ink">Cloud</span>
           <span className="text-ink"> &amp; </span>
           <span className="text-pulse">Security</span>
         </p>
