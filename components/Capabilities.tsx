@@ -15,8 +15,9 @@ import {
   GitBranch,
   Database,
   Terminal,
-  Monitor,
-  GitMerge,
+  Server,
+  Activity,
+  Lock,
 } from "lucide-react";
 import {
   SiReact,
@@ -74,6 +75,15 @@ const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string; t
       { icon: Network, label: "VLANs / 802.1Q" },
       { icon: Router, label: "Routing & Switching" },
       { icon: GitBranch, label: "Subnetting / VLSM" },
+    ],
+  },
+  {
+    title: "Monitoring & Systems Administration",
+    items: [
+      { icon: Activity, label: "Zabbix" },
+      { icon: Server, label: "Ubuntu Server" },
+      { icon: Database, label: "MariaDB" },
+      { icon: Lock, label: "SSH Remote Admin" },
     ],
   },
   {
