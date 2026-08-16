@@ -38,8 +38,9 @@ export default function Hero() {
           practical tools applying real networking concepts — from{" "}
           <span className="text-signal font-medium">corporate VLAN architectures</span> with{" "}
           <span className="text-pulse font-medium">ACL-based security</span> to{" "}
-          <span className="text-signal font-medium">network diagnostic dashboards</span> —
-          backed by a certified B2 English level and a strong commitment to continuous learning.
+          <span className="text-signal font-medium">infrastructure monitoring with Zabbix</span> —
+          backed by a certified B2 English level and a growing foundation in{" "}
+          <span className="text-pulse font-medium">cybersecurity</span>.
         </p>
 
         <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-pulse/30 bg-pulse/10 px-4 py-1.5 font-mono text-sm text-pulse">
