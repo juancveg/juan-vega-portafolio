@@ -19,10 +19,21 @@ const CATEGORIES = [
   "Computer Vision",
   "Web Development",
   "Networking",
+  "Systems Administration",
   "Geolocation",
 ];
 
 const PROJECTS: Project[] = [
+  {
+    title: "Zabbix Network Monitoring Lab",
+    description:
+      "Home lab monitoring setup built with Zabbix on Ubuntu Server, tracking host availability with tested alert triggers and a NOC-style dashboard.",
+    highlight: "Practicing real NOC L1 monitoring and troubleshooting workflows",
+    tags: ["Zabbix", "Ubuntu Server", "MariaDB", "SSH", "VirtualBox", "ICMP", "Troubleshooting"],
+    categories: ["Networking", "Systems Administration"],
+    github: "https://github.com/juancveg/zabbix-monitoring-lab",
+    image: "/projects/zabbix-monitoring-lab.png",
+  },
   {
     title: "TechNova — Corporate VLAN Lab",
     description:
