@@ -72,34 +72,27 @@ const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string; t
     title: "Networking & Protocols",
     items: [
       { icon: Globe, label: "TCP/IP" },
-      { icon: Network, label: "VLANs / 802.1Q" },
       { icon: Router, label: "Routing & Switching" },
+      { icon: Network, label: "VLANs / 802.1Q" },
       { icon: GitBranch, label: "Subnetting / VLSM" },
     ],
   },
   {
-    title: "Monitoring & Systems Administration",
-    items: [
-      { icon: Activity, label: "Zabbix" },
-      { icon: Server, label: "Ubuntu Server" },
-      { icon: Database, label: "MariaDB" },
-      { icon: Lock, label: "SSH Remote Admin" },
-    ],
-  },
-  {
-    title: "Network Tools & Systems",
+    title: "Network & Monitoring Tools",
     items: [
       { icon: Router, label: "Cisco Packet Tracer", tooltip: true },
-      { icon: Database, label: "Oracle VirtualBox" },
+      { icon: Activity, label: "Zabbix" },
+      { icon: Lock, label: "SSH Remote Admin" },
       { icon: SiPython, label: "Python" },
     ],
   },
   {
-    title: "OS & Infrastructure",
+    title: "Systems Administration",
     items: [
+      { icon: Server, label: "Ubuntu Server" },
       { icon: Terminal, label: "Linux CLI" },
-      { icon: SiGit, label: "Git" },
-      { icon: SiGithub, label: "GitHub" },
+      { icon: Database, label: "Oracle VirtualBox" },
+      { icon: Database, label: "MariaDB" },
     ],
   },
   {
@@ -118,6 +111,13 @@ const TECH_CATEGORIES: { title: string; items: { icon: AnyIcon; label: string; t
       { icon: SiExpress, label: "Express" },
       { icon: SiMysql, label: "MySQL" },
       { icon: Database, label: "Oracle" },
+    ],
+  },
+  {
+    title: "Version Control",
+    items: [
+      { icon: SiGit, label: "Git" },
+      { icon: SiGithub, label: "GitHub" },
     ],
   },
 ];
